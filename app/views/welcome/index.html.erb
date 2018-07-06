@@ -1,0 +1,32 @@
+<h1>JG's Hangman</h1>
+
+<h2>There are <%= @sizeofwordtable %> words in the playlist.</h2>
+<%  if @sizeofwordtable > 0 %>
+  <h3>Your random word is...<%= @word.word %>, <%= @word.word.length %> characters.</h3>
+
+  <% (1..@word.word.length).each do |i| %>
+    _
+
+  <% end %>
+  </br></br>
+  <%= form_tag () do %>
+    <%= text_field_tag('guess', nil, placeholder: 'Enter your guess...') %>
+    <%= submit_tag("Go") %>
+
+  <% end %>
+
+
+  <% else %>
+  Please add a word...
+<% end %>
+
+
+
+
+</br></br>
+
+<%= link_to "<button>Manage words </button>".html_safe, words_path %>
+
+
+
+<p>Find me in app/views/welcome/index.html.erb</p>
